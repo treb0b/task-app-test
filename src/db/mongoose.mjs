@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 
 const connectionURL = process.env.MONGODB_URL;
 // const databaseName = "task-app-api";
@@ -10,4 +10,4 @@ const connectionString = connectionURL;
 // they're set to true by default in mongoose 6
 const db = mongoose.connect(connectionString);
 
-export default db;
+module.exports = db;

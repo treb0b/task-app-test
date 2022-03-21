@@ -1,6 +1,6 @@
-import express from "express";
-import Task from "../models/task.mjs";
-import auth from "../middleware/auth.mjs";
+const express = require("express");
+const Task = require("../models/task.mjs");
+const auth = require("../middleware/auth.mjs");
 
 const router = new express.Router();
 // TASK create
@@ -117,4 +117,10 @@ const taskDeleteOne = router.delete("/tasks/:id", auth, async (req, res) => {
 	}
 });
 
-export { taskCreate, taskFindAll, taskFindOne, taskUpdateOwn, taskDeleteOne };
+module.exports = {
+	taskCreate,
+	taskFindAll,
+	taskFindOne,
+	taskUpdateOwn,
+	taskDeleteOne,
+};

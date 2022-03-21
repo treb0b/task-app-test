@@ -1,9 +1,10 @@
-import express from "express";
-import multer from "multer";
-import sharp from "sharp";
-import User from "../models/user.mjs";
-import auth from "../middleware/auth.mjs";
-import { sendWelcomeEmail, sendGoodbyeEmail } from "../emails/account.mjs";
+const express = require("express");
+const multer = require("multer");
+const sharp = require("sharp");
+const User = require("../models/user.mjs");
+const auth = require("../middleware/auth.mjs");
+const sendWelcomeEmail = require("../emails/account.mjs");
+const sendGoodbyeEmail = require("../emails/account.mjs");
 
 const router = new express.Router();
 // USER create
@@ -174,7 +175,7 @@ const userProfileAvatar = router.get(
 	}
 );
 
-export {
+module.exports = {
 	userCreate,
 	userDeleteAccount,
 	userDeleteAvatar,

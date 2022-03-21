@@ -1,4 +1,4 @@
-import sgMail from "@sendgrid/mail";
+const sgMail = require("@sendgrid/mail");
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 // sgMail.send({
@@ -26,4 +26,4 @@ const sendGoodbyeEmail = (email, name) => {
 	});
 };
 
-export { sendWelcomeEmail, sendGoodbyeEmail };
+module.exports = { sendWelcomeEmail, sendGoodbyeEmail };

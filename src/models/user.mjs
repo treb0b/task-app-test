@@ -1,8 +1,8 @@
-import mongoose from "mongoose";
-import validator from "validator";
-import bcrypt from "bcryptjs";
-import jwt from "jsonwebtoken";
-import Task from "./task.mjs";
+const mongoose = require("mongoose");
+const validator = require("validator");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
+const Task = require("./task.mjs");
 
 const userSchema = new mongoose.Schema(
 	{
@@ -137,4 +137,4 @@ userSchema.pre("remove", async function (next) {
 // setup user model
 const User = mongoose.model("User", userSchema);
 
-export default User;
+module.exports = User;
